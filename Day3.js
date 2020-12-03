@@ -9,7 +9,8 @@ const tragectory1 = (lines, right, down) => {
     for (let i=down; i< lines.length; i+=down) {
         if (lines[i][j] == "#") count++;
         j+=right;
-        if (j > lines[i].length-1) j = j - lines[i].length;
+        // if we reached the end of the line wrap around to continue the counting
+        if (j > lines[i].length-1) j = j - lines[i].length; 
     }
     return count;
 }  
